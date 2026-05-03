@@ -112,7 +112,7 @@ Please ensure that the zip file you submit at least contains your **my_assignmen
 
 
 
-Best submissions as of 10h18 on 02.05.
+Best submissions as of 10h14 on 03.05.
 **While every submission is graded, the leaderboard only shows the best result per student.**
 
 For detailed grading information, please refer to the `grading_full <https://github.com/lis-epfl/micro-502/blob/main/docs/assignment/grading_full.ods?raw=true>`_ file.
