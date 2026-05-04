@@ -80,6 +80,31 @@ When developing your algorithm or running the following examples, **be sure to u
 
 For example, 'uri = uri_helper.uri_from_env(default='radio://0/10/2M/E7E7E7E701')' for group 1.
 
+Operating the drone using AI deck
+------------------------------------------------
+
+Drones are equipped with an AI deck, which allows you to receive visual information from the drone and communicate with it over a WiFi connection. You can run your own algorithms on your computer and send commands to the drone via this connection.
+
+All drones are preconfigured to create a WiFi access point with the name 
+**"crazyflie_XX"** (XX is your group number) and password **"epfl_lis_XX"**. 
+To connect to the AI deck, connect your computer to the WiFi network "crazyflie_XX" using the corresponding password.
+
+To familiarise yourself with the AI deck, you can run an example script that provides an FPV video stream from the drone and allows you to control the drone using the keyboard. The script runs on your computer and communicates with the drone over WiFi:
+
+- Arrow keys: forward, backward, left, right  
+- W / S: increase / decrease altitude  
+- A / D: rotate left / right  
+- Space: emergency stop  
+
+You can find this example in the `crazyflie_fpv_example <https://github.com/lis-epfl/micro-502/blob/main/docs/assignment/crazyflie_fpv_example.py?raw=true>`_ file. This code uses the `send_hover_setpoint` function, where the height is sent as an absolute setpoint (intended to represent the distance to the surface under the Crazyflie), while x and y are given as velocity commands in body-fixed coordinates. 
+Other control modes are also available, such as `send_position_setpoint`, where the position is specified as absolute world-frame x, y, z coordinates (in meters), and the yaw corresponds to an absolute orientation.
+For more details, refer to the Crazyflie documentation on the `commander class <https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/api/cflib/crazyflie/commander/>`_.
+
+**Note:**
+
+- You will need to install the Crazyflie Python Library first.  
+- Make sure you are connected to the drone’s WiFi network before running the script.
+
 Lighthouse positioning system information
 ------------------------------------------------
 
